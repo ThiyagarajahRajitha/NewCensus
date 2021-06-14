@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                        <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"></i>
+                        <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"><a href="logout.php">out</a></i>
 
                     </div>
                     <?php
@@ -79,7 +79,7 @@ if ($result_history = mysqli_query($link, $qertyshow)) {
         ?>
 <div id='household_table'>
 <form method="POST" id="convert_form" action="export.php">
-        <table id='t01' border=1>
+        <table id='table_content' border=1>
         <thead>
         <tr>
         <th>Member No.</th>
@@ -132,7 +132,7 @@ while ($hh = mysqli_fetch_array($result_history)) {
 }
 ?>
 
-<button name="create_excel" id="create_excel">Create Excel File</button>
+
 
 </div>
 </body>
@@ -153,12 +153,12 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('#convert').click(function(){
         var table_content ='<table>';
-        table_content += $('#t01').html();
+        table_content += $('#table_content').html();
         table_content +='</table>';
         $('#file_content').val(table_content);
-        $('#convert_form').html();
+        $('#convert_form').submit();
 
 
-    })
-})
+    });
+});
 </script>

@@ -1,16 +1,16 @@
 <?php
-include 'C:\xampp\phpMyAdmin\vendor\autoload.php';
-//use PhpOffice\PhpSpreadsheet\IOFactory;
-use xampp\htdocs\NewCensus\Classes\PHPExcel\IOFactory;
+include 'vendor\autoload.php';
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
 
 
 if(isset($_POST["file_content"])){
-    $temporary_html_file='./tmp_html/'.time().'.html';
-    filr_put_contents($temporary_html_file,$_POST["file_content"]);
+    $temporary_html_file = time() . '.html';
+    file_put_contents($temporary_html_file, $_POST["file_content"]);
     $reader=IOFactory::createReader('Html');
     $spreadsheet=$reader->load($temporary_html_file);
     $writer=IOFactory::createWriter($spreadsheet,'Xlsx');
-    $filename=time().'xlsx';
+    $filename=time().'.xlsx';
     $writer->save($filename);
 
     header('Content-Type:application/x-www-form-urlencoded');
