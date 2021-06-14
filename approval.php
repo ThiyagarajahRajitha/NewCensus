@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                        <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"></i>
+                        <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"><a href="logout.php">out</a></i>
 
                     </div>
                     <?php

@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"">
-
+    <!--<link rel="stylesheet" href="stylesheet.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -48,7 +48,7 @@ $username = $_SESSION['username'];
 echo $username?></h5></label>
 					</div>
                     <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                        <i class='far fa-user-circle' style='font-size:36px; float: right;margin-top:30px;'></i>
+                        <i class='far fa-user-circle' style='font-size:36px; float: right;margin-top:30px;'><a href="logout.php">out</a></i>
 					</div>
                 </div>
 
@@ -81,7 +81,7 @@ if ($result_history = mysqli_query($link, $qertyshow)) {
         echo "<table id='t01'>";
         echo "<thead >";
         echo "<tr>";
-        echo "<th>Member No.</th>";
+        echo "<th>Mem. No.</th>";
         echo "<th>First Name</th>";
         echo "<th>Last Name</th>";
         echo "<th>NIC</th>";
