@@ -69,9 +69,9 @@
                 <div class="col-md-2 mt-3 card-container" style="margin-right:80px;">
                 <a href="http://localhost/NewCensus/GNApproval.php"/>
                     <div class="card text-center product p-4 pt-5 border-0  rounded-0" style="background-color: #b6b64e;">
-                     <img src="images/the-business-report-icon-audit-and-analysis-vector-6522497.jpg" style="width: 100px; height: 100px ;">
+                     <img src="images/download.png" style="width: 100px; height: 100px ;">
                      <div class="card-body p-4 py-0 h-xs-440p" style="font-size: large;">
-                    <b>APPROVALS</b>
+                    <b>APPROVAL</b>
                      </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="col-md-2 mt-3 card-container" style="margin-right:40px;">
                 <a href="http://localhost/NewCensus/GNDownloads.php"/>
                     <div class="card text-center product p-4 pt-5 border-0 rounded-0" style="background-color: #b6b64e;">
-                     <img src="images/download.png" style="width: 100px; height: 100px;">
+                     <img src="images/the-business-report-icon-audit-and-analysis-vector-6522497.jpg" style="width: 100px; height: 100px;">
                      <div class="card-body p-4 py-0 h-xs-440p" style="font-size: large;">
                       <b>REPORT</b>
                      </div>
