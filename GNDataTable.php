@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-    <link rel="stylesheet" href="css/custom.css">
+  
 
     <style type="text/css">
     #t01 th {
@@ -27,6 +27,8 @@
   </head>
 
   <body>
+
+
 		<div class="container-fluid">
 			<section>
 				<div class="row">
@@ -53,9 +55,42 @@ echo $username?></h5></label>
             </section>
 
         <div style="background-image:url('images/bckedit.png'); height: 610px; width:1560px;">
-        <?php
+<br>
 
-require_once "config.php";
+<div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                        <select name="gender" id="gender">
+            	            <option value=""> ---Select--- </option>
+                            
+                            <?php
+                              
+                              require "config.php";
+                              
+                            $dd_res = mysqli_query($link, "Select * from gender ORDER BY genderId");
+                            while ($row = mysqli_fetch_array($dd_res)) {
+                
+                                $genderId = $row[0];
+                                $gender_name = $row[1];
+                                echo "<option value='$genderId'> $gender_name </option>";
+                            }
+
+?>
+
+                </select>
+                </div>
+                <br>
+
+                <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                <button type="button" name="search" id="search">Search</button>
+                </div>
+        
+       
+<?php
+function getrowdata($gender){
+
+require "config.php";
+
+$userId = $_SESSION['userid'];
+$username = $_SESSION['username'];
 
 $gn = "SELECT GramaNiladhariId FROM user WHERE userId=$userId";
 if ($result_gnId = mysqli_query($link, $gn)) {
@@ -64,7 +99,7 @@ if ($result_gnId = mysqli_query($link, $gn)) {
         $gnId = $res['GramaNiladhariId'];
     }
 }
-
+if ($gender==null){
 $qertyshow = "SELECT h.householdMemberId, h.memberFirstName, h.memberLastName, h.NIC, h.DOB,h.genderId, g.gender,
  h.Relationship, e.employmentType, h.employementTypeId,h.employementDescription, h.income, h.statusId,s.status,
  h.userId, h.gramaNiladhariId FROM (((householdmember AS h INNER JOIN gender AS g ON g.genderId = h.genderId)
@@ -72,6 +107,15 @@ $qertyshow = "SELECT h.householdMemberId, h.memberFirstName, h.memberLastName, h
     ON s.statusId=h.statusId)
     WHERE h.gramaNiladhariId='$gnId' AND (h.statusId=0 OR h.statusId=1 OR h.statusId=4 OR h.statusId=9)";
 //"AND (h.statusId=0 OR h.statusId=2 OR h.statusId=5 OR h.statusId=8)'";
+}
+else{
+    $qertyshow = "SELECT h.householdMemberId, h.memberFirstName, h.memberLastName, h.NIC, h.DOB,h.genderId, g.gender,
+ h.Relationship, e.employmentType, h.employementTypeId,h.employementDescription, h.income, h.statusId,s.status,
+ h.userId, h.gramaNiladhariId FROM (((householdmember AS h INNER JOIN gender AS g ON g.genderId = h.genderId)
+    INNER JOIN employmenttype AS e ON e.employmentTypeid = h.employementTypeId) INNER JOIN status AS s
+    ON s.statusId=h.statusId)
+    WHERE h.gramaNiladhariId='$gnId' AND (h.statusId=0 OR h.statusId=1 OR h.statusId=4 OR h.statusId=9) AND g.gender==$gender";
+}
 
 if ($result_history = mysqli_query($link, $qertyshow)) {
     if (mysqli_num_rows($result_history) > 0) {
@@ -79,7 +123,7 @@ if ($result_history = mysqli_query($link, $qertyshow)) {
         ?>
 <div id='household_table'>
 <form method="POST" id="convert_form" action="export.php">
-        <table id='table_content' border=1>
+        <table id='t01' border=1>
         <thead>
         <tr>
         <th>Member No.</th>
@@ -121,7 +165,7 @@ while ($hh = mysqli_fetch_array($result_history)) {
         </tbody>
         </table>
         <input type="hidden" name= "file_content" id="file_content"/>
-        <button type="button" name="convert" id="convert">Convert</convert>
+        <button type="button" name="convert" id="convert">Convert</button>
         </form>
         </div>
 
@@ -130,6 +174,9 @@ while ($hh = mysqli_fetch_array($result_history)) {
 <?php
 }
 }
+}
+getrowdata($gender_name);
+
 ?>
 
 
@@ -153,7 +200,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('#convert').click(function(){
         var table_content ='<table>';
-        table_content += $('#table_content').html();
+        table_content += $('#t01').html();
         table_content +='</table>';
         $('#file_content').val(table_content);
         $('#convert_form').submit();

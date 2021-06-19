@@ -113,16 +113,16 @@ require_once "config.php";
     <div class="col-md-12" style="background-color: rgb(179, 226, 185);">
 
             <div class="row">
-                <div class="col-sm-8"
+                <div class="col-md-8"
                     style="background-color: rgb(95, 143, 103);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
                     <h1>E-Census Sri Lanka</h1>
                 </div>
-                <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
+                <div class="col-md-1" style="background-color: rgb(95, 143, 103);">
                     <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"></i>
 
                 </div>
 
-                <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
+                <div class="col-md-1" style="background-color: rgb(95, 143, 103);">
                     <label style="margin-top:30px; float:right;">
                         <h5> <?php session_start();
 $userId = $_SESSION['userid'];
@@ -131,7 +131,7 @@ echo $username?></h5>
                     </label>
                 </div>
 
-                <div class="col-sm-2" style="background-color: rgb(95, 143, 103);">
+                <div class="col-md-2" style="background-color: rgb(95, 143, 103);">
                     <i class='far fa-user-circle' style='font-size:36px; float: right;margin-top:30px;'><a href="logout.php">out</a></i>
                     <!--<img src="images/profile.png" style="float: right; width: 50px; height: 50px;margin-top: 20px;">-->
                 </div>
