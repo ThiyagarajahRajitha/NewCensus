@@ -66,7 +66,7 @@
                 </div>
 
 
-                <div class="col-md-2 mt-3 card-container" style="margin-right:80px;margin-left:-80px">
+                <div class="col-md-2 mt-3 card-container" style="margin-right:80px;">
                 <a href="http://localhost/NewCensus/GNApproval.php"/>
                     <div class="card text-center product p-4 pt-5 border-0  rounded-0" style="background-color: #b6b64e;">
                      <img src="images/the-business-report-icon-audit-and-analysis-vector-6522497.jpg" style="width: 100px; height: 100px ;">
