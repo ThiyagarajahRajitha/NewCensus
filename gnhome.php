@@ -23,6 +23,7 @@
   <body>
 		<div class="container-fluid" style="margin-right:-20px; margin-right:-10px">
 			<section>
+            <div style="background-image:url('images/bckedit.png'); height: 100vh; width:100% ; min-height:100vh; max-height:auto;">
 				<div class="row">
 					<div class="col-sm-7" style="background-color: rgb(95, 143, 103);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
                         <h1>E-Census Sri Lanka</h1>	
@@ -46,11 +47,11 @@
 
                 
                  
-            <div style="background-image:url('images/bckedit.png'); height: 572px; width: 1392px;">
+            
 
                 <div class="row">
 
-                    <div class="col-md-2""> 
+                    <div class="col-md-2"> 
 
                     </div>
                 <div class="col-md-2 mt-3 card-container"  style="margin-left:-70px; margin-right:40px;">
