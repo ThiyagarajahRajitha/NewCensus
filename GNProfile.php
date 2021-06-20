@@ -221,8 +221,18 @@ if(mysqli_num_rows($result) >0){
                                     placeholder="Contact Number" required>
                             </div>
                             <br />
+
+                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                                <input type="text" class="form-control input-lg" name="email"
+                                    placeholder="Email Address" required>
+                            </div>
+                            <br/>
                             
-                            
+                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6 ">
+
+                                <textarea rows="5" columns="300" name="officialAddress" placeholder="Official Address"></textarea>
+                            </div>
+                            <br />
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
                                 <button type="submit" class="btn btn-success col-md-6" id="btnSave">Save</button>
                             </div>

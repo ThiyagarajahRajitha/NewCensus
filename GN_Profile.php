@@ -18,8 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gnLastName=$_POST['GnLName'];
     $gender=$_POST['Gender'];
     $contactNo=$_POST['ContactNo'];
+    $email=$_POST['email'];
+    $officialAddress=$_POST['officialAddress'];
 
-    $query = "INSERT INTO gramaniladhariofficer (gramaNiladhariOfficerid, gramaniladhariOfficerFirstname, gramaNiladhariOfficerLastName, genderid, contactNo, gramaNiladhariId) VALUES('$gnOfficerId', '$gnFirstName', '$gnLastName','$gender','$contactNo','$gnId')";
+    $query = "INSERT INTO gramaniladhariofficer (gramaNiladhariOfficerid, gramaniladhariOfficerFirstname, gramaNiladhariOfficerLastName, genderid, contactNo, gramaNiladhariId,officialAddress,email) VALUES('$gnOfficerId', '$gnFirstName', '$gnLastName','$gender','$contactNo','$gnId','$officialAddress','$email')";
     if (mysqli_query($link, $query)) {
         echo "Grama Niladhari Officer details added Successfully";
         
