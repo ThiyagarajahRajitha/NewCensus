@@ -137,3 +137,10 @@
 		//document.getElementById("t01").remove();
 	//}
 
+
+	/*function Oncleartable(){
+	//alert("vxj");
+		document.getElementById("t01").innerHTML="";
+	}
+	*/
+
