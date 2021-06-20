@@ -30,6 +30,15 @@
             margin-left: 248px;
             font-size: 18px;
         }
+        select{
+            margin-left:265px;
+            padding-left:8px;
+            padding-top:8px;
+            padding-bottom:8px;
+            padding-right:8px;
+            border-radius:4px;
+            
+        }
     </style>
 
     <?php
@@ -161,7 +170,7 @@ if(mysqli_num_rows($result) >0){
 
                         <hr />
 
-                        <form action="" method="post">
+                        <form action="GN_Profile.php" method="post">
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
                                 <input type="text" class="form-control input-lg" name="name"
                                     placeholder="<?php $username=$_SESSION['username']; echo $username ?> " disabled required>
@@ -184,21 +193,35 @@ if(mysqli_num_rows($result) >0){
                                     disabled required>
                             </div>
                             <br />
+
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                                <input type="text" class="form-control input-lg" name="GnName" placeholder="GN Name"
+                                <input type="text" class="form-control input-lg" name="GNOfficerId" placeholder="GN Officer Id"
+                                    required>
+                            </div>
+                            <br/>
+                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                                <input type="text" class="form-control input-lg" name="GnFName" placeholder="GN First Name"
+                                    required>
+                            </div>
+                            <br/>
+                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                                <input type="text" class="form-control input-lg" name="GnLName" placeholder="GN Last Name"
                                     required>
                             </div>
                             <br />
+
+                           
+                                <select name="Gender" ><option value="1">Female</option><option value="2">Male</option>
+                                 </select>
+                          
+                            <br/><br/>
+
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
                                 <input type="text" class="form-control input-lg" name="ContactNo"
                                     placeholder="Contact Number" required>
                             </div>
                             <br />
-                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                                <input type="email" class="form-control input-lg" name="email"
-                                    placeholder="email Address" required>
-                            </div>
-                            <br />
+                            
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6 ">
 
                                 <textarea rows="5" columns="300" placeholder="Official Address"></textarea>
