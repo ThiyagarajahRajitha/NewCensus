@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>GramaNiladhari Home</title>
+    <title>GramaNiladhari Profile</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
