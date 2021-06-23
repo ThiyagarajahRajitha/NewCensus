@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>GramaNiladhari Home</title>
+    <title>GramaNiladhari Profile</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -30,7 +30,107 @@
             margin-left: 248px;
             font-size: 18px;
         }
+        select{
+            margin-left:265px;
+            padding-left:8px;
+            padding-top:8px;
+            padding-bottom:8px;
+            padding-right:8px;
+            border-radius:4px;
+            
+        }
     </style>
+
+    <?php
+    include 'config.php';
+
+session_start();
+$user=$_SESSION['userid'];
+$sql="SELECT GramaNiladhariId FROM user WHERE userId='$user'";
+if($result=mysqli_query($link,$sql)){
+    if(mysqli_num_rows($result) >0){
+        $row=mysqli_fetch_assoc($result);
+        $gnId=$row['GramaNiladhariId'];
+        $_SESSION['$gnId']=$gnId;
+    }
+}
+
+$username=$_SESSION['username'];
+$sql="SELECT  divisionalSecretariatId FROM gramaniladhari WHERE gramaNiladhariId='$gnId'";
+	
+if($result=mysqli_query($link,$sql)){
+    if(mysqli_num_rows($result) >0){
+        $row=mysqli_fetch_assoc($result);
+        $divSecId=$row['divisionalSecretariatId'];
+        $_SESSION['$divSecId']=$divSecId;
+
+
+    }
+}
+$sql="SELECT divisionalSecretariatName FROM divisionalsecretariat WHERE divisionalSecretariatId='$divSecId' ";
+if($result=mysqli_query($link,$sql)){
+if(mysqli_num_rows($result) >0){
+    $row=mysqli_fetch_assoc($result);
+    $divSecName=$row['divisionalSecretariatName'];
+    $_SESSION['$divSecName']=$divSecName;
+
+
+}
+}
+
+$sql="SELECT districtId FROM divisionalsecretariat WHERE divisionalSecretariatId='$divSecId' ";
+if($result=mysqli_query($link,$sql)){
+if(mysqli_num_rows($result) >0){
+    $row=mysqli_fetch_assoc($result);
+    $distId=$row['districtId'];
+    $_SESSION['$distId']=$distId;
+
+
+}
+}
+
+$sql="SELECT districtName FROM district WHERE districtId='$distId' ";
+if($result=mysqli_query($link,$sql)){
+if(mysqli_num_rows($result) >0){
+    $row=mysqli_fetch_assoc($result);
+    $distName=$row['districtName'];
+    $_SESSION['$districtName']=$distName;
+
+
+}
+}
+
+
+
+$sql="SELECT provinceId FROM district WHERE districtId='$distId' ";
+if($result=mysqli_query($link,$sql)){
+if(mysqli_num_rows($result) >0){
+    $row=mysqli_fetch_assoc($result);
+    $provId=$row['provinceId'];
+    $_SESSION['$provId']=$provId;
+
+
+}
+}
+
+$sql="SELECT provinceName FROM province WHERE provinceId='$provId' ";
+if($result=mysqli_query($link,$sql)){
+if(mysqli_num_rows($result) >0){
+    $row=mysqli_fetch_assoc($result);
+    $provName=$row['provinceName'];
+    $_SESSION['$provName']=$provName;
+
+
+}
+}
+
+
+
+
+
+
+
+?>
 </head>
 
 <body style="background-color: rgb(179, 226, 185);">
@@ -48,8 +148,9 @@
                 </div>
 
                 <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                    <label style="margin-top:30px; float:right;">
-                        <h5> Username </h5>
+                    <label style="margin-top:30px; float:right;"><h5> <?php $userId=$_SESSION['userid'];
+                        $username=$_SESSION['username']; echo $username ?></h5>
+                        
                     </label>
                 </div>
 
@@ -69,47 +170,67 @@
 
                         <hr />
 
-                        <form action="" method="post">
+                        <form action="GN_Profile.php" method="post">
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
                                 <input type="text" class="form-control input-lg" name="name"
-                                    placeholder="GN Division Name" disabled required>
+                                    placeholder="<?php $username=$_SESSION['username']; echo $username ?> " disabled required>
                             </div>
                             <br />
 
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
                                 <input type="text" class="form-control input-lg" name="DS"
-                                    placeholder="Divisional Secratariat Name" disabled required>
+                                    placeholder="<?php  echo $_SESSION['$divSecName'] ?>" disabled required>
                             </div>
                             <br />
 
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                                <input type="text" class="form-control input-lg" name="district" placeholder="District"
+                                <input type="text" class="form-control input-lg" name="district" placeholder="<?php  echo $_SESSION['$districtName'] ?>"
                                     disabled required>
                             </div>
                             <br />
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                                <input type="text" class="form-control input-lg" name="province" placeholder="Province"
+                                <input type="text" class="form-control input-lg" name="province" placeholder="<?php echo $_SESSION['$provName'] ?>"
                                     disabled required>
                             </div>
                             <br />
+
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                                <input type="text" class="form-control input-lg" name="GnName" placeholder="GN Name"
+                                <input type="text" class="form-control input-lg" name="GNOfficerId" placeholder="GN Officer Id"
+                                    required>
+                            </div>
+                            <br/>
+                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                                <input type="text" class="form-control input-lg" name="GnFName" placeholder="GN First Name"
+                                    required>
+                            </div>
+                            <br/>
+                            <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
+                                <input type="text" class="form-control input-lg" name="GnLName" placeholder="GN Last Name"
                                     required>
                             </div>
                             <br />
+
+                           
+                                <select name="Gender" ><option value="1">Female</option><option value="2">Male</option>
+                                 </select>
+                          
+                            <br/><br/>
+
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
                                 <input type="text" class="form-control input-lg" name="ContactNo"
                                     placeholder="Contact Number" required>
                             </div>
                             <br />
+
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                                <input type="email" class="form-control input-lg" name="email"
-                                    placeholder="email Address" required>
+                                <input type="text" class="form-control input-lg" name="email"
+                                    placeholder="Email Address" required>
                             </div>
-                            <br />
+                            <br/>
+                            
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6 ">
 
-                                <textarea rows="5" columns="300" placeholder="Official Address"></textarea>
+                                <textarea rows="5" columns="300" name="officialAddress" placeholder="Official Address"></textarea>
                             </div>
                             <br />
                             <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">

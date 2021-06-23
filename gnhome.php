@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>GramaNiladhari Home</title>
+    <title>GramaNiladhari's Home</title>
 	
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -55,7 +55,7 @@
 
                     </div>
                 <div class="col-md-2 mt-3 card-container"  style="margin-left:-70px; margin-right:40px;">
-                <a href="http://localhost/NewCensus/GNProfile.html"/>
+                <a href="http://localhost/NewCensus/GNProfile.php"/>
                     <div class="card text-center product p-4 pt-5 border-0 rounded-0" style="background-color: #b6b64e;">
                      <img src="images/profile.png" style="width: 100px; height: 100px;">
                      
@@ -71,7 +71,7 @@
                     <div class="card text-center product p-4 pt-5 border-0  rounded-0" style="background-color: #b6b64e;">
                      <img src="images/download.png" style="width: 100px; height: 100px ;">
                      <div class="card-body p-4 py-0 h-xs-440p" style="font-size: large;">
-                    <b>APPROVAL</b>
+                    <b>APPROVALS</b>
                      </div>
                     </div>
                 </div>
