@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>GramaNiladhari Home</title>
 
     <!-- Required meta tags -->
@@ -8,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"">
-    <!--<link rel="stylesheet" href="stylesheet.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"">
+    <!--<link rel=" stylesheet" href="stylesheet.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -20,42 +22,46 @@
 
     <style type="text/css">
     #t01 th {
-            background-color: black;
-            color: white;
-        }
-</style>
-  </head>
+        background-color: black;
+        color: white;
+    }
+    </style>
+</head>
 
-  <body>
-		<div class="container-fluid">
-			<section>
-				<div class="row">
-					<div class="col-sm-7" style="background-color: rgb(95, 143, 103);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                        <h1>E-Census Sri Lanka</h1>
-                    </div>
-
-                    <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                        <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"></i>
-
-                    </div>
-                    <?php
-
-?>
-                    <div class="col-sm-3" style="background-color: rgb(95, 143, 103);">
-                        <label style="margin-top:30px; float:right;"><h5> <?php session_start();
-$userId = $_SESSION['userid'];
-$username = $_SESSION['username'];
-echo $username?></h5></label>
-					</div>
-                    <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                        <i class='far fa-user-circle' style='font-size:36px; float: right;margin-top:30px;'><a href="logout.php">out</a></i>
-					</div>
+<body>
+    <div class="container-fluid">
+        <section>
+            <div class="row">
+                <div class="col-sm-7"
+                    style="background-color: rgb(95, 143, 103);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    <h1>E-Census Sri Lanka</h1>
                 </div>
 
-            </section>
+                <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
+                    <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"></i>
+
+                </div>
+                <?php
+
+?>
+                <div class="col-sm-3" style="background-color: rgb(95, 143, 103);">
+                    <label style="margin-top:30px; float:right;">
+                        <h5> <?php session_start();
+$userId = $_SESSION['userid'];
+$username = $_SESSION['username'];
+echo $username?></h5>
+                    </label>
+                </div>
+                <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
+                    <i class='far fa-user-circle' style='font-size:36px; float: right;margin-top:30px;'><a
+                            href="logout.php">out</a></i>
+                </div>
+            </div>
+
+        </section>
 
         <div style="background-image:url('images/bckedit.png'); height: 610px; width:1560px;">
-        <?php
+            <?php
 
 require_once "config.php";
 
@@ -143,9 +149,6 @@ if ($result_history = mysqli_query($link, $qertyshow)) {
 
         </div>
 
-        </body>
+</body>
 
 </html>
-
-
-
