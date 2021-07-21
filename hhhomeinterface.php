@@ -16,7 +16,7 @@ require_once "Layouts/HeaderHousehold.php";
     <script src="main.js"></script>
 </head>
 
-<body class="hhome">
+<body class="hhome" style="height:135vh;">
     <h2 style="text-align: center;margin-top:10px">Family Members Details</h2>
     <hr />
     <div class="row" id="memberdetails">
@@ -346,6 +346,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+<p></p></hr><p></p><p></p><p></p><p></p><p>&nbsp&nbsp&nbsp</p><p></p><p></p>
 </div>
     
 <section>

@@ -165,7 +165,6 @@ if($result=mysqli_query($link,$sql)){
     }
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['Save'])){
     $gnOfficerId=$_POST['GNOfficerId'];
