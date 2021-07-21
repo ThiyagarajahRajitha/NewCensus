@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100vh;
+}
+
+
+
+.container-fluid p-0{
+	width:100%;
+    min-height: 100%;
+    
+}
+.row no-gutters{
+    height:100%;
+}
+.card-deck{
+    margin-left:15%!important;
+    margin-top: 10%;
+}
+.card-deck .card{
+    background-color:#9e761d;
+    color:papayawhip;    
+}
+
+.card-container{
+    width:270px;
+}
+.card-container a{
+    color:#9e761d!important;   
+}
+.card-container img{
+    width: 100px; 
+    height: 100px;
+}
+.card-container.card-body{
+    font-size: large;
+}
+
+
+/*dasuni*/
+.right {
+    float: right;
+}
+#bg input,
+#bg textarea {
+    margin-left: 250px;
+    font-size: 16px;
+}
+
+#btnSave {
+    margin-left: 248px;
+    font-size: 18px;
+}
+/*
+select{
+    margin-left:265px;
+    padding-left:8px;
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-right:8px;
+    border-radius:4px; 
+}
+*/
+/*end of dasuni*/
+
+a{
+    font-size:16px;
+}
+#t01, #t02{
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+   
+    
+}
+/*
+#t01 tr:nth-child(even){background-color: #f2f2f2;}
+
+#t01 tr:hover {background-color: rgb(20, 212, 84);}
+#t02 tr:hover {background-color: #ddd;}
+*/
+#t01 td, #t01 th, #t02 td, #t02 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color:burlywood;
+  }
+
+#t01 input[type=text], #t01 input[type=date], #t01 select, #t02 select{
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+
+#t01 th, #t02 th {
+    background-color: black;
+    color: white;
+}
+
+
+.GNRowdata #filter, .GNReport #filter, .hhome #memberdetails{
+    margin-left: 0;
+    margin-right: 0;
+    width:100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(25, 29, 32);
+    border:4px solid #9e761d;
+     
+}
+.GNReport #chart{
+    margin-left: 0;
+    margin-right: 0;
+    width:100%;
+}
+
+#form1{
+    width:100%;
+}
+
+
+#rowdataselect tr, #memberdetailsform tr{
+    height:50px;
+}
+
+#rowdataselect td{
+width:200px;
+}
+#memberdetailsform td {
+    width: 225px;
+}
+
+button#convert, button#create_pdf{
+margin-left: 1000px;
+}
+
+.col-lg-4{
+    height: 400px;
+}
+#main-wrapper{
+display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#chart body{
+    flex: 1;
+    overflow-y: scroll;
+}
+.form-popup {
+    display: none;
+    position: fixed;
+    top:15px;
+    left:40%;
+    
+  }
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    left:50px;
+  }
+  .form-container .cancel {
+    background-color: red;
+  }
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }

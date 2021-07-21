@@ -60,29 +60,4 @@ while($row=mysqli_fetch_assoc($data)){
     $pdf->Output();
 
 }
-    /*
-header("Content-Type: application/octet-stream");
-  
-//$file = $_GET["GNDataTable.php"]  . ".pdf";
-  
-//header("Content-Disposition: attachment; filename=" . urlencode($file));   
-
- header('Content-disposition: attachment; filename=GNDataTable.pdf');
- header('Content-type: application/download');
- header("Content-Description: File Transfer");            
- header("Content-Length: " . filesize(GNDataTable.php));
- //readfile('GNDataTable.pdf');
-
- flush(); // This doesn't really matter.
-  
-$fp = fopen(GNDataTable.php, "r");
-while (!feof($fp)) {
-    echo fread($fp, 65536);
-    flush(); // This is essential for large downloads
-} 
-  
-fclose($fp); 
-
-*/
-
  ?>

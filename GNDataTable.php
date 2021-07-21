@@ -6,70 +6,30 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,height=device-height initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"">
-
-    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <?php
+    require_once "Layouts/HeaderBody.php";
+    ?>
+    <link rel="stylesheet" href="CSS/stylesheetbody.css">
     <script src="main.js"></script>
-
-
-    <style type="text/css">
-    #t01 th {
-        background-color: black;
-        color: white;
-    }
-    </style>
 </head>
 
-<body>
+<body class="GNRowdata">
 
+    <br>
+    <div class="row"  id="filter">
+        <form id="form1" action="" method="post">
+            <table id="rowdataselect">
+                <tr>
+                    <td>
+                        <lable> Gender: </lable>
+</td>
+                    <td><select name="gender" id="gender" class="form-control">
+                            <option value=""> ---Select--- </option>
 
-    <div class="container-fluid">
-        <section>
-            <div class="row">
-                <div class="col-sm-7"
-                    style="background-color: rgb(95, 143, 103);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                    <h1>E-Census Sri Lanka</h1>
-                </div>
-
-                <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                    <i class="fa fa-bell" style="font-size:36px; margin-top:24px; float:right;"><a
-                            href="logout.php">out</a></i>
-
-                </div>
-                <?php
-?>
-                <div class="col-sm-3" style="background-color: rgb(95, 143, 103);">
-                    <label style="margin-top:30px; float:right;">
-                        <h5> <?php session_start();
-$userId = $_SESSION['userid'];
-$username = $_SESSION['username'];
-echo $username?></h5>
-                    </label>
-                </div>
-                <div class="col-sm-1" style="background-color: rgb(95, 143, 103);">
-                    <i class='far fa-user-circle' style='font-size:36px; float: right;margin-top:30px;'></i>
-                </div>
-            </div>
-        </section>
-
-        <div style="background-image:url('images/bckedit.png'); height: 610px; width:1560px;">
-            <br>
-            <form id="form1" action="" method="post">
-                <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                    <lable> Gender: </lable>
-                    <select name="gender" id="gender">
-                        <option value=""> ---Select--- </option>
-
-                        <?php
+                            <?php
 
 require "config.php";
 
@@ -83,16 +43,16 @@ while ($row = mysqli_fetch_array($dd_res)) {
 
 ?>
 
-                    </select>
-                </div>
-                <br>
+                        </select>
+</td>
+<td> </td>
+                    <td>
+                        <lable> Employment Type: </lable>
+                    </td>
+                    <td><select name="employmenttype" id="employmenttype" class="form-control">
+                            <option value=""> ---Select--- </option>
 
-                <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                    <lable> Employment Type: </lable>
-                    <select name="employmenttype" id="employmenttype">
-                        <option value=""> ---Select--- </option>
-
-                        <?php
+                            <?php
 
 require "config.php";
 
@@ -104,34 +64,45 @@ while ($row = mysqli_fetch_array($dd_res)) {
     echo "<option value='$employmenttypeId'> $employmenttype_name </option>";
 }
 ?>
-                    </select>
-                </div>
-                <br>
+                        </select></td>
+                </tr>
 
-                <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                    <lable> Amount From: </lable>
-                    <input type="text" name="amountfrom" id="amountfrom">
-                    <lable> To: </lable>
-                    <input type="text" name="amountto" id="amountto">
-                </div>
-                <br>
+                <tr>
+                    <td>
+                        <lable> Amount From: </lable>
+                    </td>
+                    <td><input type="text" name="amountfrom" id="amountfrom" class="form-control"></td>
+                    <td> </td>
+                    <td>
+                        <lable> To: </lable>
+                    </td>
+                    <td> <input type="text" name="amountto" id="amountto" class="form-control"></td>
+                </tr>
 
-                <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                    <lable> Date of Birth From: </lable>
-                    <input type="date" name="dobfrom" id="dobfrom">
-                    <lable> To: </lable>
-                    <input type="date" name="dobto" id="dobto">
-                </div>
-                <br>
+                <tr>
+                    <td>
+                        <lable> Date of Birth From: </lable>
+                    </td>
+                    <td><input type="date" name="dobfrom" id="dobfrom" class="form-control"></td>
+                    <td> </td>
+                    <td>
+                        <lable> To: </lable>
+                    </td>
+                    <td> <input type="date" name="dobto" id="dobto" class="form-control"></td>
+                </tr>
+                <tr>
+                <td><a class="btn btn-secondary btn-lg btn-block" href="gnhome.php"><i class="fas fa-hand-point-left"></i>  BACK</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="submit" class="btn btn-primary btn-lg btn-block" name="search" value="Search" onclick="onClear()"></td>
 
-                <div class="col-5m-12 col-md-6 col-lg-6 col-md-6 col-md-6">
-                    <input type="submit" name="search" value="Search">
-                </div>
-            </form>
-
-
-
-            <?php
+                </tr>
+            </table>
+        </form>
+    </div>
+    <?php
 //function getrowdata($gender){
 
 require "config.php";
@@ -155,7 +126,7 @@ if (isset($_POST['search'])) {
     $dobfrom = $_POST['dobfrom'];
     $dobto = $_POST['dobto'];
 
-    $where = " WHERE h.gramaNiladhariId='$gnId' AND (h.statusId=0 OR h.statusId=1 OR h.statusId=4 OR h.statusId=9)";
+    $where = " WHERE h.gramaNiladhariId='$gnId' AND (h.statusId=2 OR h.statusId=5 OR h.statusId=8)";
     //echo $where;
     if (!empty($gender)) {
         $where .= "AND h.genderId='$gender'";
@@ -192,13 +163,13 @@ if (isset($_POST['search'])) {
     //echo $qertyshow;
 
 } else {
-    echo "pageloaf";
+    //echo "pageloaf";
     $qertyshow = "SELECT h.householdMemberId, h.memberFirstName, h.memberLastName, h.NIC, h.DOB,h.genderId, g.gender,
     h.Relationship, e.employmentType, h.employementTypeId,h.employementDescription, h.income, h.statusId,s.status,
     h.userId, h.gramaNiladhariId FROM (((householdmember AS h INNER JOIN gender AS g ON g.genderId = h.genderId)
        INNER JOIN employmenttype AS e ON e.employmentTypeid = h.employementTypeId) INNER JOIN status AS s
        ON s.statusId=h.statusId)
-       WHERE h.gramaNiladhariId='$gnId' AND (h.statusId=0 OR h.statusId=1 OR h.statusId=4 OR h.statusId=9)";
+       WHERE h.gramaNiladhariId='$gnId' AND (h.statusId=2 OR h.statusId=5 OR h.statusId=8)";
     //"AND (h.statusId=0 OR h.statusId=2 OR h.statusId=5 OR h.statusId=8)'";
 }
 
@@ -212,64 +183,64 @@ if ($result_history = mysqli_query($link, $qertyshow)) {
     if (mysqli_num_rows($result_history) > 0) {
 
         ?>
-            <div id='household_table'>
-                <form method="POST" id="convert_form" action="export.php">
-                    <table id='t01' border=1>
-                        <thead>
-                            <tr>
-                                <th>Member No.</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>NIC</th>
-                                <th>DOB</th>
-                                <th>Gender</th>
-                                <th>Relationship</th>
-                                <th>EmploymentType</th>
-                                <th>Employement Desc</th>
-                                <th>Income</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+    <div id='household_table'>
+        <form method="POST" id="convert_form" action="export.php">
+            <table id='t01' border=1>
+                <thead>
+                    <tr>
+                        <th>Member No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>NIC</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Relationship</th>
+                        <th>EmploymentType</th>
+                        <th>Employement Desc</th>
+                        <th>Income</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                            <?php
+                    <?php
 while ($hh = mysqli_fetch_array($result_history)) {
             ?>
 
-                            <tr>
-                                <td><?php echo $hh['householdMemberId']; ?> </td>
-                                <td><?php echo $hh['memberFirstName']; ?></td>
-                                <td><?php echo $hh['memberLastName']; ?></td>
-                                <td><?php echo $hh['NIC']; ?></td>
-                                <td><?php echo $hh['DOB']; ?></td>
-                                <td><?php echo $hh['gender']; ?></td>
-                                <td><?php echo $hh['Relationship']; ?></td>
-                                <td><?php echo $hh['employmentType']; ?></td>
-                                <td><?php echo $hh['employementDescription']; ?></td>
-                                <td><?php echo $hh['income']; ?></td>
-                                <td><?php echo $hh['status']; ?></td>
-                            </tr>
+                    <tr>
+                        <td><?php echo $hh['householdMemberId']; ?> </td>
+                        <td><?php echo $hh['memberFirstName']; ?></td>
+                        <td><?php echo $hh['memberLastName']; ?></td>
+                        <td><?php echo $hh['NIC']; ?></td>
+                        <td><?php echo $hh['DOB']; ?></td>
+                        <td><?php echo $hh['gender']; ?></td>
+                        <td><?php echo $hh['Relationship']; ?></td>
+                        <td><?php echo $hh['employmentType']; ?></td>
+                        <td><?php echo $hh['employementDescription']; ?></td>
+                        <td><?php echo $hh['income']; ?></td>
+                    </tr>
 
-                            <?php
+                    <?php
 }
         ?>
-                        </tbody>
-                    </table>
-                    <input type="hidden" name="file_content" id="file_content" />
-                    <button type="button" name="convert" id="convert">Convert</button>
-                </form>
-            </div>
+                </tbody>
+            </table>
+            <input type="hidden" name="file_content" id="file_content" />
+            <button type="button" name="convert" class="btn btn-dark btn-lg" id="convert">
+                <i class="fas fa-file-excel"></i>   Download Excel</button>
+                
+        </form>
+    </div>
 
 
 
-            <?php
+    <?php
 }
 }
 //}
 //getrowdata(null);
 
 ?>
-            <?php
+    <?php
 /*if (isset($_POST['search'])) {
 
 $gender = $_POST['gender'];
@@ -281,7 +252,14 @@ echo $gender;
 ?>
 
 
-        </div>
+    </div>
+
+    <section>
+        <?php
+        require_once "Layouts/Footer.php";
+        ?>
+    </section>
+
 </body>
 
 </html>

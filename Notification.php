@@ -13,8 +13,8 @@ if ($result_gnId = mysqli_query($link, $gn)) {
 }
 
 $qertyshow = "SELECT count(h.householdMemberId) AS countt FROM householdmember AS h 
-INNER JOIN status AS s ON s.statusId=h.statusId WHERE h.gramaNiladhariId=16 
-AND (h.statusId=0 OR h.statusId=1 OR h.statusId=4 OR h.statusId=7)";
+INNER JOIN status AS s ON s.statusId=h.statusId WHERE h.gramaNiladhariId='$gnId' 
+AND (h.statusId=1 OR h.statusId=4 OR h.statusId=7)";
 
 if ($result_history = mysqli_query($link, $qertyshow)) {
     if (mysqli_num_rows($result_history) > 0) {
