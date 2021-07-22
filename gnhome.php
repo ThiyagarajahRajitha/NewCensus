@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>GramaNiladhari's Home</title>
+    <title>GramaNiladhari Home</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=no">
