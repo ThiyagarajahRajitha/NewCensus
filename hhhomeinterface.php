@@ -281,27 +281,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result_history = mysqli_query($link, $qertyshow)) {
         if (mysqli_num_rows($result_history) > 0) {
-            //echo "after";
-            /*  echo "<table id='t02'>";
-            echo "<thead >";
-            echo "<tr>";
-            echo "<th>Member No.</th>";
-            echo "<th>First Name</th>";
-            echo "<th>Last Name</th>";
-            echo "<th>NIC</th>";
-            echo "<th>DOB</th>";
-            echo "<th>Gender</th>";
-            echo "<th>Relationship</th>";
-            echo "<th>EmploymentType</th>";
-            echo "<th>Employement Desc</th>";
-            echo "<th>Income</th>";
-            echo "<th>Status</th>";
-            echo "<th></th>";
-            echo "<th></th>";
-            echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-             */
+            
             while ($hh = mysqli_fetch_array($result_history)) {
                 echo "<tr><form action='edit.php' method='POST'>";
                 echo "<td><input type='text' name='householdMemberId' size='3' value='" . $hh['householdMemberId'] . "'readonly='readonly'</td>";
